@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular - Ingeniería en Sistemas de Información</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Malla Curricular - Ingeniería en Sistemas de Información</h1>
+  <div class="grid">
+    <div class="column">
+      <h2>Primer Semestre</h2>
+      <div class="course" data-codigo="EIF200" data-requisitos='[]'>
+        <strong>EIF200</strong><br>
+        Fundamentos de Informática<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="MAT030" data-requisitos='[]'>
+        <strong>MAT030</strong><br>
+        Matemática para Informática<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EGI" data-requisitos='[]'>
+        <strong>EGI</strong><br>
+        Estudios Generales I<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EGII" data-requisitos='[]'>
+        <strong>EGII</strong><br>
+        Estudios Generales II<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="LIX410" data-requisitos='[]'>
+        <strong>LIX410</strong><br>
+        Inglés Integrado I<br>
+        Créditos: 4
+      </div>
+    </div>
+    <div class="column">
+      <h2>Segundo Semestre</h2>
+      <div class="course" data-codigo="EIF201" data-requisitos='["EIF200", "MAT030"]'>
+        <strong>EIF201</strong><br>
+        Programación I<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="MAT002" data-requisitos='["MAT030"]'>
+        <strong>MAT002</strong><br>
+        Cálculo I<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EGIII" data-requisitos='[]'>
+        <strong>EGIII</strong><br>
+        Estudios Generales III<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EGIV" data-requisitos='[]'>
+        <strong>EGIV</strong><br>
+        Estudios Generales IV<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="LIX411" data-requisitos='["LIX410"]'>
+        <strong>LIX411</strong><br>
+        Inglés Integrado II<br>
+        Créditos: 4
+      </div>
+    </div>
+    <div class="column">
+      <h2>Tercer Semestre</h2>
+      <div class="course" data-codigo="EIF202" data-requisitos='["EIF200"]'>
+        <strong>EIF202</strong><br>
+        Soporte Técnico<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EIF203" data-requisitos='["EIF200", "MAT030"]'>
+        <strong>EIF203</strong><br>
+        Estructuras Discretas para Informática<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EIF204" data-requisitos='["EIF201"]'>
+        <strong>EIF204</strong><br>
+        Programación II<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="MAT005" data-requisitos='["MAT002"]'>
+        <strong>MAT005</strong><br>
+        Álgebra Lineal<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="LIX412" data-requisitos='["LIX411"]'>
+        <strong>LIX412</strong><br>
+        Inglés Integrado III<br>
+        Créditos: 4
+      </div>
+    </div>
+    <div class="column">
+      <h2>Cuarto Semestre</h2>
+      <div class="course" data-codigo="EIF205" data-requisitos='["EIF201", "EIF202"]'>
+        <strong>EIF205</strong><br>
+        Arquitectura de Computadores<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EIF206" data-requisitos='["EIF204", "MAT002"]'>
+        <strong>EIF206</strong><br>
+        Programación III<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF207" data-requisitos='["EIF203", "EIF204"]'>
+        <strong>EIF207</strong><br>
+        Estructuras de Datos<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF404" data-requisitos='["EIF201"]'>
+        <strong>EIF404</strong><br>
+        La Organización y su Entorno<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="MAT006" data-requisitos='["MAT002", "EIF203"]'>
+        <strong>MAT006</strong><br>
+        Probabilidad y Estadística para Informática<br>
+        Créditos: 3
+      </div>
+    </div>
+        <div class="column">
+      <h2>Quinto Semestre</h2>
+      <div class="course" data-codigo="EIF208" data-requisitos='["EIF205"]'>
+        <strong>EIF208</strong><br>
+        Comunicaciones y Redes de Computadoras<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EIF209" data-requisitos='["EIF206"]'>
+        <strong>EIF209</strong><br>
+        Programación IV<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF210" data-requisitos='["EIF206"]'>
+        <strong>EIF210</strong><br>
+        Ingeniería de Sistemas I<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF211" data-requisitos='["EIF206", "EIF207"]'>
+        <strong>EIF211</strong><br>
+        Diseño e Implementación de Bases de Datos<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF212" data-requisitos='["EIF204", "EIF205"]'>
+        <strong>EIF212</strong><br>
+        Sistemas Operativos<br>
+        Créditos: 3
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Sexto Semestre</h2>
+      <div class="course" data-codigo="EIF400" data-requisitos='["EIF206"]'>
+        <strong>EIF400</strong><br>
+        Paradigmas de Programación<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF401" data-requisitos='["EIF210"]'>
+        <strong>EIF401</strong><br>
+        Ingeniería de Sistemas II<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF402" data-requisitos='["EIF212", "EIF211"]'>
+        <strong>EIF402</strong><br>
+        Administración de Bases de Datos<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF407" data-requisitos='["EIF404"]'>
+        <strong>EIF407</strong><br>
+        Liderazgo y Organización<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="EIF412" data-requisitos='["EIF206", "MAT005", "MAT006"]'>
+        <strong>EIF412</strong><br>
+        Investigación de Operaciones y sus Aplicaciones<br>
+        Créditos: 3
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Séptimo Semestre</h2>
+      <div class="course" data-codigo="EIF406" data-requisitos='["EIF401"]'>
+        <strong>EIF406</strong><br>
+        Ingeniería de Sistemas III<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF411" data-requisitos='["EIF209"]'>
+        <strong>EIF411</strong><br>
+        Diseño y Programación de Plataformas Móviles<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF413" data-requisitos='["MAT006"]'>
+        <strong>EIF413</strong><br>
+        Métodos de Investigación Científica en Informática<br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="OPT1" data-requisitos='[]'>
+        <strong>Optativa</strong><br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="OPT2" data-requisitos='[]'>
+        <strong>Optativa</strong><br>
+        Créditos: 3
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Octavo Semestre</h2>
+      <div class="course" data-codigo="EIF408" data-requisitos='["EIF209", "EIF401", "EIF402"]'>
+        <strong>EIF408</strong><br>
+        Proyectos y su Aplicación en la Organización (PPS)<br>
+        Créditos: 5
+      </div>
+      <div class="course" data-codigo="EIF409" data-requisitos='["EIF209", "EIF401", "EIF402"]'>
+        <strong>EIF409</strong><br>
+        Aplicaciones Informáticas Globales<br>
+        Créditos: 4
+      </div>
+      <div class="course" data-codigo="EIF410" data-requisitos='["EIF401"]'>
+        <strong>EIF410</strong><br>
+        Informática y Sociedad<br>
+        Créditos: 2
+      </div>
+      <div class="course" data-codigo="OPT3" data-requisitos='[]'>
+        <strong>Optativa</strong><br>
+        Créditos: 3
+      </div>
+      <div class="course" data-codigo="OPT4" data-requisitos='[]'>
+        <strong>Optativa</strong><br>
+        Créditos: 3
+      </div>
+    </div>
+  </div>
+
+    <div class="dark-mode" id="toggle-darkmode">
+        <div class="circle">
+            <ion-icon name="sunny" class="icon sun-icon"></ion-icon>
+            <ion-icon name="moon" class="icon moon-icon"></ion-icon>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
