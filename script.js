@@ -5,8 +5,22 @@ function actualizarEstado() {
   cursos.forEach(curso => {
     const codigo = curso.dataset.codigo;
     const requisitos = JSON.parse(curso.dataset.requisitos || '[]');
-    const tooltip = requisitos.length ? "Requiere: " + requisitos.join(", ") : "Requiere: NINGUNO";
+    const tooltip = requisitos.length ? "Requisitos: " + requisitos.join(", ") : "Requisitos: NINGUNO";
     curso.setAttribute("data-tooltip", tooltip);
+
+  let requisitosElemento = curso.querySelector('.requisitos-visible');
+  if (!requisitosElemento) {
+    requisitosElemento = document.createElement('div');
+    requisitosElemento.classList.add('requisitos-visible');
+    requisitosElemento.style.fontSize = '12px';
+    requisitosElemento.style.marginTop = '5px';
+    curso.appendChild(requisitosElemento);
+  }
+
+  requisitosElemento.innerHTML = requisitos.length 
+    ? `<strong>Requisitos:</strong> ${requisitos.join(", ")}` 
+    : `<strong>Requisitos:</strong> NINGUNO`;
+
 
     const completado = aprobadas.includes(codigo);
     const habilitado = requisitos.every(r => aprobadas.includes(r));

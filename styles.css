@@ -153,6 +153,15 @@ body.active .dark-mode .circle {
   margin-left: 10px;
   z-index: 10;
 }
+.course:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+body.active .course:hover {
+  background-color: #3b3b3b;
+}
+
 body.active .course {
   background-color: #333; 
   color: #f0f0f0;  
@@ -170,4 +179,11 @@ body.active .column {
 }
 body.active .column h2 {
   color: white;
+}
+.requisitos-visible {
+  color: #555;
+}
+
+body.active .requisitos-visible {
+  color: #ccc; 
 }
