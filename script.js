@@ -1,5 +1,5 @@
 const cursos = document.querySelectorAll('.course');
-const aprobadas = JSON.parse(localStorage.getItem('aprobadas') || '[]');
+let aprobadas = JSON.parse(localStorage.getItem('aprobadas') || '[]');
 
 function actualizarEstado() {
   cursos.forEach(curso => {
@@ -8,19 +8,18 @@ function actualizarEstado() {
     const tooltip = requisitos.length ? "Requisitos: " + requisitos.join(", ") : "Requisitos: NINGUNO";
     curso.setAttribute("data-tooltip", tooltip);
 
-  let requisitosElemento = curso.querySelector('.requisitos-visible');
-  if (!requisitosElemento) {
-    requisitosElemento = document.createElement('div');
-    requisitosElemento.classList.add('requisitos-visible');
-    requisitosElemento.style.fontSize = '12px';
-    requisitosElemento.style.marginTop = '5px';
-    curso.appendChild(requisitosElemento);
-  }
+    let requisitosElemento = curso.querySelector('.requisitos-visible');
+    if (!requisitosElemento) {
+      requisitosElemento = document.createElement('div');
+      requisitosElemento.classList.add('requisitos-visible');
+      requisitosElemento.style.fontSize = '12px';
+      requisitosElemento.style.marginTop = '5px';
+      curso.appendChild(requisitosElemento);
+    }
 
-  requisitosElemento.innerHTML = requisitos.length 
-    ? `<strong>Requisitos:</strong> ${requisitos.join(", ")}` 
-    : `<strong>Requisitos:</strong> NINGUNO`;
-
+    requisitosElemento.innerHTML = requisitos.length 
+      ? `<strong>Requisitos:</strong> ${requisitos.join(", ")}`
+      : `<strong>Requisitos:</strong> NINGUNO`;
 
     const completado = aprobadas.includes(codigo);
     const habilitado = requisitos.every(r => aprobadas.includes(r));
@@ -39,7 +38,7 @@ cursos.forEach(curso => {
     if (!habilitado && !aprobadas.includes(codigo)) return;
 
     if (aprobadas.includes(codigo)) {
-      aprobadas.splice(aprobadas.indexOf(codigo), 1);
+      aprobadas = aprobadas.filter(c => c !== codigo);
     } else {
       aprobadas.push(codigo);
     }
@@ -51,8 +50,30 @@ cursos.forEach(curso => {
 const darkMode = document.querySelector(".dark-mode");
 const body = document.body;
 
-darkMode.addEventListener("click",()=>{
-    body.classList.toggle("active");
+darkMode.addEventListener("click", () => {
+  body.classList.toggle("active");
+});
+
+// Checkboxes de semestre
+document.querySelectorAll('.select-semestre').forEach((checkbox, index) => {
+  checkbox.addEventListener('change', () => {
+    const column = document.querySelectorAll('.column')[index];
+    const courses = column.querySelectorAll('.course:not(.locked)');
+    const toggle = checkbox.checked;
+
+    courses.forEach(course => {
+      const codigo = course.dataset.codigo;
+
+      if (toggle && !aprobadas.includes(codigo)) {
+        aprobadas.push(codigo);
+      } else if (!toggle && aprobadas.includes(codigo)) {
+        aprobadas = aprobadas.filter(c => c !== codigo);
+      }
+    });
+
+    localStorage.setItem('aprobadas', JSON.stringify(aprobadas));
+    actualizarEstado();
+  });
 });
 
 actualizarEstado();
